@@ -9,10 +9,12 @@ import image5 from './assets/bg-5.jpg';
 import React from 'react';
 
 class App extends React.Component {
-  form_current;
   
   constructor(props) {
     super(props);
+    this.state = {
+      form_current: FormType.RIOTDEVKEYFORM,
+    };
   }
 
   render() {
@@ -21,7 +23,11 @@ class App extends React.Component {
         <header className="App-header">
         </header>
 
-        <div className="form">Test</div>
+        <div className="form">
+          {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm />}
+          {this.state.form_current === FormType.GETSUMMONERSFORM && <GetSummonersForm />}
+          {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
+        </div>
   
         <BackgroundSlider 
           images={[image1, image2, image3, image4, image5]}
@@ -34,6 +40,35 @@ class App extends React.Component {
   }
 }
 
+const FormType = {
+  RIOTDEVKEYFORM: "riotdevkeyform",
+  GETSUMMONERSFORM: "getsummonersform",
+  VIEWTEAMSFORM: "viewteamsform"
+}
+
+class RiotDevKeyForm extends React.Component {
+  render() {
+    return (<div>
+      Test1
+    </div>);
+  }
+}
+
+class GetSummonersForm extends React.Component {
+  render() {
+    return (<div>
+      Test2
+    </div>);
+  }
+}
+
+class ViewTeamsForm extends React.Component {
+  render() {
+    return (<div>
+      Test3
+    </div>);
+  }
+}
 
 function ErrorForm(props) {
     return (<div className={"error", "form"}>
