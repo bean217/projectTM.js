@@ -6,14 +6,22 @@ import image2 from './assets/bg-2.jpg';
 import image3 from './assets/bg-3.jpg';
 import image4 from './assets/bg-4.jpg';
 import image5 from './assets/bg-5.jpg';
+import React from 'react';
 
-function App() {
+class App extends React.Component {
+  form_current;
+  
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     return (
-      <div>
-        <div className="App">
-          <header className="App-header">
-          </header>
-        </div>
+      <div className="App">
+        <header className="App-header">
+        </header>
+
+        <div className="form">Test</div>
   
         <BackgroundSlider 
           images={[image1, image2, image3, image4, image5]}
@@ -24,5 +32,13 @@ function App() {
         
     );
   }
+}
+
+
+function ErrorForm(props) {
+    return (<div className={"error", "form"}>
+      {props.msg}
+    </div>);
+}
 
 export default App;

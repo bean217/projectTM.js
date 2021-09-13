@@ -4,3 +4,21 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+.error {
+  color: red;
+}
+
+.form {
+  background-color: azure;
+  margin: 0 auto;
+  padding: 5px;
+  top: 50%;
+  transform: translateY(40vh);
+  min-width: 20%;
+  min-height: 10%;
+  max-width: 300px;
+  max-height: 150px;
+  opacity: 75%;
+  border: solid black 2px;
+}
