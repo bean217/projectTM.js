@@ -22,3 +22,20 @@ body {
   opacity: 75%;
   border: solid black 2px;
 }
+
+.riotdevkeyform {
+  display: grid;
+  grid-template-areas: none;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+.riotdevkeyform .text {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  font-family: Cambria;
+  font-size: 12pt;
+  font-weight: bolder;
+}

@@ -10,8 +10,8 @@ import React from 'react';
 
 class App extends React.Component {
   
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       form_current: FormType.RIOTDEVKEYFORM,
     };
@@ -48,24 +48,35 @@ const FormType = {
 
 class RiotDevKeyForm extends React.Component {
   render() {
-    return (<div>
-      Test1
+    return (<div className="riotdevkeyform">
+      <div class="text">
+        Enter Riot Dev Key:
+      </div>
+      <div class="input">
+        <input type="text"></input>
+      </div>
+      <div class="submit">
+        <button>
+          Submit
+        </button>
+      </div>
+      
     </div>);
   }
 }
 
 class GetSummonersForm extends React.Component {
   render() {
-    return (<div>
-      Test2
+    return (<div className="getsummonersform">
+      GetSummonersForm
     </div>);
   }
 }
 
 class ViewTeamsForm extends React.Component {
   render() {
-    return (<div>
-      Test3
+    return (<div className="viewteamsform">
+      ViewTeamsForm
     </div>);
   }
 }
