@@ -1,6 +1,8 @@
 import './index.css';
 import BackgroundSlider from 'react-background-slider';
 
+import { check_api } from './riotApi';
+
 import image1 from './assets/bg-1.jpg';
 import image2 from './assets/bg-2.jpg';
 import image3 from './assets/bg-3.jpg';
@@ -31,7 +33,7 @@ class App extends React.Component {
         </div>
   
         <BackgroundSlider 
-          images={[image1, image2, image3, image4, image5]}
+          images={[image1, image2, image3, image4, image5, image6]}
           duration={8}
           transition={2}
         />
@@ -72,6 +74,7 @@ class RiotDevKeyForm extends React.Component {
 
   handleSubmit(event) {
     console.log("HANDLE SUBMIT: " + this.state.key);
+    check_api(this.state.key);
     event.preventDefault();
   }
 
