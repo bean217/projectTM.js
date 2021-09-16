@@ -39,6 +39,7 @@ export class RiotDevKeyForm extends React.Component {
                 'Content-Type': 'application/json'
             }
         })
+        .then(res => res.json())
         .then(res => console.log(res))
         .catch(err => console.log(err));
         

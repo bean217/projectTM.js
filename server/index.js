@@ -1,3 +1,6 @@
+const riotApi = require('./riotApi');
+const check_api = riotApi.check_api;
+
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -15,7 +18,7 @@ app.get("/api", (req, res) => {
 
 app.post("/check_key", (req, res) => {
     console.log(`Got body: ${req.body.key}`);
-    res.sendStatus(200);
+    res.status(200).json({result: check_api(req.body.key)});
 });
 
 
