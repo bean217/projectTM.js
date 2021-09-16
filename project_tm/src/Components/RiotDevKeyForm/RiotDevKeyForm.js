@@ -1,6 +1,8 @@
 import React from "react";
 import './RiotDevKeyForm.css'
 
+import { BACKENDURL } from '../App/constants';
+
 import { ErrorMsg } from "../ErrorMsg/ErrorMsg";
 
 export class RiotDevKeyForm extends React.Component {
@@ -28,8 +30,19 @@ export class RiotDevKeyForm extends React.Component {
   
     handleSubmit(event) {
         console.log("HANDLE SUBMIT: " + this.state.key);
+        console.log(`${BACKENDURL}/check_key`);
         // check the key
-        this.props.onKeyAccept(this.state.key); // pass it to the parent
+        fetch(`${BACKENDURL}/check_key`, {
+            method: 'POST',
+            body: JSON.stringify({ key: this.state.key }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+        
+        this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
         event.preventDefault();
     }
   
