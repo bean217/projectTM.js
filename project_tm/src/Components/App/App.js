@@ -1,6 +1,6 @@
 import './App.css';
 import BackgroundSlider from 'react-background-slider';
-import { RiotDevKeyForm } from './RiotDevKeyForm/RiotDevKeyForm';
+import { RiotDevKeyForm } from '../RiotDevKeyForm/RiotDevKeyForm';
 import { GetSummonersForm } from '../GetSummonersForm/GetSummonersForm';
 import { ViewTeamsForm } from '../ViewTeamsForm/ViewTeamsForm';
 
