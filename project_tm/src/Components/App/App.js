@@ -50,15 +50,8 @@ class App extends React.Component {
           transition={2}
         />
       </div>
-        
     );
   }
 }
-
-
-
-
-
-
 
 export default App;

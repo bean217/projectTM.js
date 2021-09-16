@@ -16,9 +16,9 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
-app.post("/check_key", (req, res) => {
+app.post("/check_key", async (req, res) => {
     console.log(`Got body: ${req.body.key}`);
-    res.status(200).json({result: check_api(req.body.key)});
+    res.status(200).json({result: await check_api(req.body.key) });
 });
 
 
