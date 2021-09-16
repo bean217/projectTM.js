@@ -28,7 +28,8 @@ export class RiotDevKeyForm extends React.Component {
   
     handleSubmit(event) {
         console.log("HANDLE SUBMIT: " + this.state.key);
-        this.props.onKeyAccept(this.state.key);
+        // check the key
+        this.props.onKeyAccept(this.state.key); // pass it to the parent
         event.preventDefault();
     }
   
