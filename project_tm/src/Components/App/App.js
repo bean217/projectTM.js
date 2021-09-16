@@ -12,6 +12,12 @@ import image5 from '../../assets/bg-5.jpg';
 import image6 from '../../assets/bg-6.jpg';
 import React from 'react';
 
+const FormType = {
+  RIOTDEVKEYFORM: "riotdevkeyform",
+  GETSUMMONERSFORM: "getsummonersform",
+  VIEWTEAMSFORM: "viewteamsform"
+}
+
 class App extends React.Component {
   
   constructor() {
@@ -42,12 +48,6 @@ class App extends React.Component {
         
     );
   }
-}
-
-const FormType = {
-  RIOTDEVKEYFORM: "riotdevkeyform",
-  GETSUMMONERSFORM: "getsummonersform",
-  VIEWTEAMSFORM: "viewteamsform"
 }
 
 

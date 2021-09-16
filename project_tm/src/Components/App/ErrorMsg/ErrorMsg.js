@@ -1,4 +1,5 @@
 import React from "react";
+import './ErrorMsg.css'
 
 export class ErrorMsg extends React.Component {
     constructor(props) {
