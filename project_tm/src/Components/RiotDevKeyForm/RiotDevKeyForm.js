@@ -4,8 +4,8 @@ import './RiotDevKeyForm.css'
 import { ErrorMsg } from "../ErrorMsg/ErrorMsg";
 
 export class RiotDevKeyForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
   
@@ -28,6 +28,7 @@ export class RiotDevKeyForm extends React.Component {
   
     handleSubmit(event) {
         console.log("HANDLE SUBMIT: " + this.state.key);
+        this.props.onKeyAccept(this.state.key);
         event.preventDefault();
     }
   

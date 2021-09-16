@@ -22,9 +22,14 @@ class App extends React.Component {
   
   constructor() {
     super();
+    this.handleKey = this.handleKey.bind(this);
     this.state = {
       form_current: FormType.RIOTDEVKEYFORM,
     };
+  }
+
+  handleKey(api_key) {
+    console.log(`API_KEY_PASSED_TO_PARENT: ${api_key}`);
   }
 
   render() {
@@ -34,7 +39,7 @@ class App extends React.Component {
         </header>
 
         <div className="form">
-          {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm />}
+          {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm onKeyAccept={this.handleKey} />}
           {this.state.form_current === FormType.GETSUMMONERSFORM && <GetSummonersForm />}
           {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
         </div>
