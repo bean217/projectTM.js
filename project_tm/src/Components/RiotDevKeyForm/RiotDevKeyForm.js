@@ -4,6 +4,7 @@ import './RiotDevKeyForm.css'
 import { BACKENDURL } from '../App/constants';
 
 import { ErrorMsg } from "../ErrorMsg/ErrorMsg";
+import { BufferIcon } from "../BufferIcon/BufferIcon";
 
 export class RiotDevKeyForm extends React.Component {
     constructor(props) {
@@ -13,10 +14,8 @@ export class RiotDevKeyForm extends React.Component {
   
         this.state = {
             key: '',
-            errMsg: {
-                isErr: false,
-                msg: "",
-            }
+            errMsg: '',
+            isLoading: false,
         };
     }
   
@@ -24,14 +23,18 @@ export class RiotDevKeyForm extends React.Component {
         this.setState({
             key: event.target.value,
             errMsg: this.state.errMsg,
+            isLoading: this.state.isLoading,
         });
         console.log(this.state.key);
     }
   
     handleSubmit(event) {
-        console.log("HANDLE SUBMIT: " + this.state.key);
-        console.log(`${BACKENDURL}/check_key`);
         // check the key
+        this.setState({
+            key: this.state.key,
+            errMsg: '',
+            isLoading: true,
+        })
         fetch(`${BACKENDURL}/check_key`, {
             method: 'POST',
             body: JSON.stringify({ key: this.state.key }),
@@ -40,10 +43,22 @@ export class RiotDevKeyForm extends React.Component {
             }
         })
         .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-        
-        this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
+        .then(res => {
+            // res.result is a boolean value indicating if they key is valid
+            if (res.result) {
+                this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
+            } else {
+                this.setState({
+                    key: this.state.key,
+                    errMsg: "Invalid Key",
+                    isLoading: false,
+                });
+                console.log("ERR MSG LENGTH: " + this.state.errMsg.length);
+            }
+            this.setState();
+        })
+        .catch(err => console.log(`Encountered an error in RiotDevKeyForm::handleSubmit() - ${err}`));
+
         event.preventDefault();
     }
   
@@ -62,7 +77,13 @@ export class RiotDevKeyForm extends React.Component {
                     Submit
                 </button>
             </div>
-            <ErrorMsg display={this.state.errMsg.isErr} errMsg={this.state.errMsg.msg} />
+            <ErrorMsg 
+                display={this.state.errMsg.length !== 0}
+                errMsg={this.state.errMsg}
+            />
+            <BufferIcon 
+                display={this.state.isLoading}
+            />
         </div>);
     }
   }
