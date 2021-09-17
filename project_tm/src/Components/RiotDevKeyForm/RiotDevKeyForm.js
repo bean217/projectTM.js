@@ -24,8 +24,6 @@ export class RiotDevKeyForm extends React.Component {
             ...this.state,
             key: event.target.value,
         });
-        console.log(this.state);
-        console.log(this.state.key);
     }
   
     handleSubmit(event) {
@@ -58,7 +56,6 @@ export class RiotDevKeyForm extends React.Component {
                     errMsg: "Invalid Key", 
                     isLoading: false,
                 });
-                console.log("ERR MSG LENGTH: " + this.state.errMsg.length);
             }
         })
         .catch(err => console.log(`Encountered an error in RiotDevKeyForm::handleSubmit() - ${err}`));
