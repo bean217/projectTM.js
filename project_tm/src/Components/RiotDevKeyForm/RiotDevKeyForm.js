@@ -21,20 +21,20 @@ export class RiotDevKeyForm extends React.Component {
   
     handleChange(event) {
         this.setState({
+            ...this.state,
             key: event.target.value,
-            errMsg: this.state.errMsg,
-            isLoading: this.state.isLoading,
         });
+        console.log(this.state);
         console.log(this.state.key);
     }
   
     handleSubmit(event) {
         // check the key
         this.setState({
-            key: this.state.key,
+            ...this.state,
             errMsg: '',
             isLoading: true,
-        })
+        });
         fetch(`${BACKENDURL}/check_key`, {
             method: 'POST',
             body: JSON.stringify({ key: this.state.key }),
@@ -48,19 +48,18 @@ export class RiotDevKeyForm extends React.Component {
             if (res.result) {
                 this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
                 this.setState({
-                    key: this.state.key,
-                    errMsg: "",
+                    ...this.state,
+                    errMsg: '',
                     isLoading: false,
                 });
             } else {
                 this.setState({
-                    key: this.state.key,
-                    errMsg: "Invalid Key",
+                    ...this.state, 
+                    errMsg: "Invalid Key", 
                     isLoading: false,
                 });
                 console.log("ERR MSG LENGTH: " + this.state.errMsg.length);
             }
-            this.setState();
         })
         .catch(err => console.log(`Encountered an error in RiotDevKeyForm::handleSubmit() - ${err}`));
 
