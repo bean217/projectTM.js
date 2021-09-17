@@ -47,6 +47,11 @@ export class RiotDevKeyForm extends React.Component {
             // res.result is a boolean value indicating if they key is valid
             if (res.result) {
                 this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
+                this.setState({
+                    key: this.state.key,
+                    errMsg: "",
+                    isLoading: false,
+                });
             } else {
                 this.setState({
                     key: this.state.key,
@@ -68,13 +73,15 @@ export class RiotDevKeyForm extends React.Component {
             Enter Riot Dev Key:
             </div>
             <div className="input">
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.key} onChange={this.handleChange}></input>
+                <form onSubmit={this.state.isLoading ? (e) => e.preventDefault() : this.handleSubmit}>
+                    <input readOnly={this.state.isLoading ? true : false} type="text" value={this.state.key} onChange={this.handleChange}></input>
                 </form>
             </div>
             <div className="submit">
-                <button onClick={this.handleSubmit}>
-                    Submit
+                <button 
+                    style={{display: this.state.isLoading ? "none" : "block"}} 
+                    onClick={this.handleSubmit}>
+                        Submit
                 </button>
             </div>
             <ErrorMsg 
