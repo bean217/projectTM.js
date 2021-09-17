@@ -44,12 +44,12 @@ export class RiotDevKeyForm extends React.Component {
         .then(res => {
             // res.result is a boolean value indicating if they key is valid
             if (res.result) {
-                this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
                 this.setState({
                     ...this.state,
                     errMsg: '',
                     isLoading: false,
                 });
+                this.props.onKeyAccept(this.state.key); // pass it to the parent (App) component
             } else {
                 this.setState({
                     ...this.state, 
