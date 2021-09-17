@@ -1,6 +1,5 @@
 .riotdevkeyform {
-    display: grid;
-    grid-template-areas: none;
+    display: block;
     padding: 0 auto;
     margin: 0 auto;
   }
