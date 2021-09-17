@@ -14,7 +14,7 @@ body {
     min-width: 15%;
     min-height: 10%;
     max-width: 300px;
-    max-height: 150px;
+    /*max-height: 150px;*/
     opacity: 75%;
     border: solid black 2px;
     -webkit-animation: fadeIn 1.2s ease-in-out;
