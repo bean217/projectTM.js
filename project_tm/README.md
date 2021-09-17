@@ -1,3 +1,5 @@
+Made with the help of: https://github.com/u2ix/react-background-slider
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
