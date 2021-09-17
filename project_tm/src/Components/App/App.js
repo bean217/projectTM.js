@@ -30,6 +30,9 @@ class App extends React.Component {
 
   handleKey(api_key) {
     console.log(`API_KEY_PASSED_TO_PARENT: ${api_key}`);
+    this.setState({
+      form_current: FormType.GetSummonersForm,
+     })
   }
 
   render() {
