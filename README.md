@@ -1,6 +1,6 @@
 # PROJECT_TM.js
 
-PROJECT_TM.js is a javascript rewrite of https://github.com/williamztom/ProjectTM using React.js.
+PROJECT_TM.js is a JavaScript rewrite of https://github.com/williamztom/ProjectTM using React.js.
 
 The purpose of this project is to give League of Legends tournament maker's an easier time when balancing teams for larger-scale tournaments with 10 or more people.
 
