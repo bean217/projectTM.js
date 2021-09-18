@@ -18,7 +18,8 @@
 
 .playerviewer .list {
     grid-area: list;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: auto;
 }
 
 .playerviewer img {

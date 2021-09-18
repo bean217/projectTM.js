@@ -3,10 +3,11 @@
     margin: 0 auto;
     padding: 5px;
     top: 50%;
-    transform: translateY(40vh);
+    transform: translateY(25vh);
     min-width: 25%;
     width: fit-content;
     min-height: 10%;
+    max-height: 75vh;
     opacity: 75%;
     border: solid black 2px;
     display: grid;
