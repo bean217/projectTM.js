@@ -12,6 +12,7 @@ export class GetSummonersForm extends React.Component {
             <hr id="hr1" />
             <PlayerViewer />
             <hr id="hr2" />
+            <hr id="hr3" />
             <TournamentTypeSelect />
         </div>);
     }

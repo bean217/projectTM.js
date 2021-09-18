@@ -15,7 +15,9 @@
         "uploadfile"
         "hr1"
         "playerviewer"
-        "hr2";
+        "hr2"
+        "hr3"
+        "tournamenttypeselect";
 }
 
 .getsummonersform > * {
@@ -24,6 +26,14 @@
 
 .getsummonersform .uploadfile {
     grid-area: uploadfile;
+}
+
+.getsummonersform .playerviewer {
+    grid-area: playerviewer;
+}
+
+.getsummonersform .tournamenttypeselect {
+    grid-area: tournamenttypeselect;
 }
 
 .getsummonersform hr {
@@ -38,6 +48,6 @@
         grid-area: hr2;
     }
 
-.getsummonersform .playerviewer {
-    grid-area: playerviewer;
-}
+    .getsummonersform #hr3 {
+        grid-area: hr3;
+    }
