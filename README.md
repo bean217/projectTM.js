@@ -17,9 +17,9 @@ Added Modules:
 Usage:
 - Clone repository to your local machine
 - Download Node.js if you have not already: https://nodejs.org/en/
-- cd into `/projecttm.js` and run `npm install`
+- cd into `/projecttm.js` and run `npm install` (installs express server packages)
 - Next, run `npm run start` to start the `express` server
-- Finally, `cd` into `/project_tm` and run `npm start` to start the React client
+- Finally, `cd` into `/project_tm` and run `npm install` (installs React client packages) and then `npm start` to start the React client
 
 Recommended: Use a valid Riot Games Developer Key from https://developer.riotgames.com/
 
