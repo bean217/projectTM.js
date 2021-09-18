@@ -11,7 +11,7 @@ Feel free to make a pull request to add any features that would advance or impro
 Author: Benjamin Piro
 
 Added Modules:
-- Made with the help of: https://github.com/u2ix/react-background-slider
+- React Background Slider: https://github.com/u2ix/react-background-slider
 
 
 Usage:
