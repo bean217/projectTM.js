@@ -2,7 +2,7 @@
 
 PROJECT_TM.js is a JavaScript rewrite of https://github.com/williamztom/ProjectTM using React.js.
 
-The purpose of this project is to give League of Legends tournament maker's an easier time when balancing teams for larger-scale tournaments with 10 or more people.
+The purpose of this project is to give League of Legends tournament organizers an easier time when balancing teams for larger-scale tournaments with 10 or more people.
 
 It is important to note that PROJECT_TM.js only works on RiotGames' NA1 servers.
 
