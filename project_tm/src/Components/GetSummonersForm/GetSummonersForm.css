@@ -14,7 +14,7 @@
     grid-template-areas: 
         "uploadfile"
         "hr1"
-        "playerviewer"
+        "addplayer"
         "hr2"
         "hr3"
         "tournamenttypeselect";
@@ -28,8 +28,8 @@
     grid-area: uploadfile;
 }
 
-.getsummonersform .playerviewer {
-    grid-area: playerviewer;
+.getsummonersform .addplayer {
+    grid-area: addplayer;
 }
 
 .getsummonersform .tournamenttypeselect {
