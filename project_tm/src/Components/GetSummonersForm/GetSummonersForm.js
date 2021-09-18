@@ -3,6 +3,7 @@ import './GetSummonersForm.css'
 
 import { UploadFile } from "../UploadFile/UploadFile";
 import { PlayerViewer } from "../PlayerViewer/PlayerViewer";
+import { TournamentTypeSelect } from "../TournamentTypeSelect/TournamentTypeSelect";
 
 export class GetSummonersForm extends React.Component {
     render() {
@@ -11,6 +12,7 @@ export class GetSummonersForm extends React.Component {
             <hr id="hr1" />
             <PlayerViewer />
             <hr id="hr2" />
+            <TournamentTypeSelect />
         </div>);
     }
 }
