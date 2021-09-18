@@ -12,3 +12,15 @@ Author: Benjamin Piro
 
 Added Modules:
 - Made with the help of: https://github.com/u2ix/react-background-slider
+
+
+Usage:
+- Clone repository to your local machine
+- Download Node.js if you have not already: https://nodejs.org/en/
+- cd into `/projecttm.js` and run `npm install`
+- Next, run `npm start` to start the `express` server
+- Finally, `cd` into `/project_tm` and run `npm start` to start the React client
+
+Recommended: Use a valid Riot Games Developer Key from https://developer.riotgames.com/
+
+Happy tournament making!
