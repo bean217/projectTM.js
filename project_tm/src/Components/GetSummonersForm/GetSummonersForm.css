@@ -1,0 +1,13 @@
+.getsummonersform {
+    background-color: azure;
+    margin: 0 auto;
+    padding: 5px;
+    top: 50%;
+    transform: translateY(40vh);
+    min-width: 25%;
+    width: fit-content;
+    min-height: 10%;
+    opacity: 75%;
+    border: solid black 2px;
+    display: block;
+}

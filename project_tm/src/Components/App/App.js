@@ -31,7 +31,7 @@ class App extends React.Component {
   handleKey(api_key) {
     console.log(`API_KEY_PASSED_TO_PARENT: ${api_key}`);
     this.setState({
-      form_current: FormType.GetSummonersForm,
+      form_current: FormType.GETSUMMONERSFORM,
      });
   }
 
@@ -41,11 +41,10 @@ class App extends React.Component {
         <header className="App-header">
         </header>
 
-        <div className="form">
-          {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm onKeyAccept={this.handleKey} />}
-          {this.state.form_current === FormType.GETSUMMONERSFORM && <GetSummonersForm />}
-          {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
-        </div>
+        
+        {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm onKeyAccept={this.handleKey} />}
+        {this.state.form_current === FormType.GETSUMMONERSFORM && <GetSummonersForm />}
+        {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
   
         <BackgroundSlider 
           images={[image1, image2, image3, image4, image5, image6]}
