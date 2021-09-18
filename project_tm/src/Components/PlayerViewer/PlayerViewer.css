@@ -1,0 +1,31 @@
+.playerviewer {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+        "txt txt txt txt . . . . ." 
+        "list list list list img banner banner banner banner"
+        "list list list list . banner banner banner banner";
+}
+
+.playerviewer > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.playerviewer .text {
+    grid-area: txt;
+}
+
+.playerviewer .list {
+    grid-area: list;
+    overflow: scroll;
+}
+
+.playerviewer img {
+    grid-area: img;
+    height: 100px;
+}
+
+.playerviewer .banner {
+    grid-area: banner;
+}

@@ -6,7 +6,7 @@ export class AddPlayer extends React.Component {
     render() {
         return (
             <div className="addplayer">
-                <div className="text">Add Player:</div>
+                <div className="text">Add Summoner:</div>
                 <ErrorMsg 
                     display={true} 
                     errMsg={"TEST"}

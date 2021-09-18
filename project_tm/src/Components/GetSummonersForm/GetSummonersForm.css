@@ -16,6 +16,7 @@
         "hr1"
         "addplayer"
         "hr2"
+        "playerviewer"
         "hr3"
         "tournamenttypeselect";
 }
@@ -30,6 +31,10 @@
 
 .getsummonersform .addplayer {
     grid-area: addplayer;
+}
+
+.getsummonersform .playerviewer {
+    grid-area: playerviewer;
 }
 
 .getsummonersform .tournamenttypeselect {

@@ -1,6 +1,6 @@
 .tournamenttypeselect {
     display: grid;
-    grid-template-columns: repeate(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     "txt err"
     "tt gen";
