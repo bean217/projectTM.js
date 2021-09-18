@@ -6,7 +6,7 @@
         "browse submit usage";
 }
 
-.uploadfile * {
+.uploadfile > * {
     align-self: center;
     justify-self: center;
 }

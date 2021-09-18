@@ -9,5 +9,35 @@
     min-height: 10%;
     opacity: 75%;
     border: solid black 2px;
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "uploadfile"
+        "hr1"
+        "playerviewer"
+        "hr2";
+}
+
+.getsummonersform > * {
+    border: 1px solid black;
+}
+
+.getsummonersform .uploadfile {
+    grid-area: uploadfile;
+}
+
+.getsummonersform hr {
+    width: 100%;
+}
+
+    .getsummonersform #hr1 {
+        grid-area: hr1;
+    }
+
+    .getsummonersform #hr2 {
+        grid-area: hr2;
+    }
+
+.getsummonersform .playerviewer {
+    grid-area: playerviewer;
 }
