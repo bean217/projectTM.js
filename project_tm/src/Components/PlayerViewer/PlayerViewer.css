@@ -1,10 +1,10 @@
 .playerviewer {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 10fr 1fr 10fr;
     grid-template-areas:
-        "txt txt txt txt . . . . ." 
-        "list list list list img banner banner banner banner"
-        "list list list list . banner banner banner banner";
+        "txt . ." 
+        "list img banner"
+        "list . banner";
 }
 
 .playerviewer > * {
