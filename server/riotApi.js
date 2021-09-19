@@ -44,7 +44,19 @@ async function get_summoner(api_key, summonerName) {
                 })
                 .catch(
                     err => {
-                        console.log(`${RiotApiURL}/lol/league/v4/entries/by-summoner/${summonerInfo.id}?api_key=${api_key}`);
+                        console.log(`Encountered an error in server/riotApi.js::get_summoner()`);
+                        return { errMsg: `Could not fetch ranked data` };
+                    }
+                );
+
+            await axios.get(
+                `https://na.whatismymmr.com/api/v1/summoner?name=${summonerName}`
+                )
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(
+                    err => {
                         console.log(`Encountered an error in server/riotApi.js::get_summoner()`);
                         return { errMsg: `Could not fetch ranked data` };
                     }
