@@ -24,6 +24,7 @@ class App extends React.Component {
     super();
     this.handleKey = this.handleKey.bind(this);
     this.state = {
+      api_key: "",
       form_current: FormType.RIOTDEVKEYFORM,
     };
   }
@@ -31,6 +32,8 @@ class App extends React.Component {
   handleKey(api_key) {
     console.log(`API_KEY_PASSED_TO_PARENT: ${api_key}`);
     this.setState({
+      ...this.state,
+      api_key: api_key,
       form_current: FormType.GETSUMMONERSFORM,
      });
   }
@@ -42,8 +45,10 @@ class App extends React.Component {
         </header>
 
         
-        {this.state.form_current === FormType.RIOTDEVKEYFORM && <RiotDevKeyForm onKeyAccept={this.handleKey} />}
-        {this.state.form_current === FormType.GETSUMMONERSFORM && <GetSummonersForm />}
+        {this.state.form_current === FormType.RIOTDEVKEYFORM && 
+          <RiotDevKeyForm onKeyAccept={this.handleKey} />}
+        {this.state.form_current === FormType.GETSUMMONERSFORM && 
+          <GetSummonersForm api_key={this.state.api_key} />}
         {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
   
         <BackgroundSlider 

@@ -23,11 +23,11 @@
     grid-area: sn;
 }
 
-.addplayer #roles1 {
+.addplayer #role1 {
     grid-area: r1;
 }
 
-.addplayer #roles2 {
+.addplayer #role2 {
     grid-area: r2;
 }
 

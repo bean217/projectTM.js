@@ -13,13 +13,13 @@ export class UploadFile extends React.Component {
                 />
                 <div className="browse">
                     <input id="input" type="file" name="file"></input>
-                    <button for="file" onClick={() => document.getElementById('input').click()}>Upload File</button>
+                    <button htmlFor="file" onClick={() => document.getElementById('input').click()}>Upload File</button>
                 </div>
                 <div className="submit">
                     <button>Submit</button>
                 </div>
                 <div className="usage">
-                    (<a href="#"><u>?</u></a>)
+                    (<a href="/"><u>?</u></a>)
                 </div>
             </div>
         );

@@ -11,7 +11,7 @@ export class GetSummonersForm extends React.Component {
         return (<div className="getsummonersform">
             <UploadFile />
             <hr id="hr1" />
-            <AddPlayer />
+            <AddPlayer api_key={this.props.api_key} />
             <hr id="hr2" />
             <PlayerViewer />
             <hr id="hr3" />

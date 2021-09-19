@@ -10,7 +10,7 @@ export class PlayerViewer extends React.Component {
                 <div className="list">
 
                 </div>
-                <img src={bracket} />
+                <img src={bracket} alt="bracket.png" />
                 <div className="banner">
 
                 </div>
