@@ -25,7 +25,7 @@ export class AddPlayer extends React.Component {
     }
 
     handleSubmit(event) {
-        const summoner = {
+        let summoner = {
             name: document.getElementById('summonerName').value,
             role1: document.getElementById('role1').value,
             role2: document.getElementById('role2').value,
@@ -54,7 +54,8 @@ export class AddPlayer extends React.Component {
         .then(res => {
             console.log(res);
             if (!res.result.hasOwnProperty('errMsg')) {
-                this.props.onPlayerAdd(res.result);
+                summoner = {...summoner, ...res.result};
+                this.props.onPlayerAdd(summoner);
             } else {
                 this.setState({
                     ...this.state,
