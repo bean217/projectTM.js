@@ -28,7 +28,7 @@ class App extends React.Component {
     this.state = {
       api_key: "",
       form_current: FormType.RIOTDEVKEYFORM,
-      players: [],
+      players: {},
     };
   }
 
@@ -43,10 +43,11 @@ class App extends React.Component {
 
   handleAddPlayer(playerObj) {
       console.log("APP Has Received <add>" + playerObj);
-      if (!this.state.players.map(item => item.name).includes(playerObj.name)) {
+      //if (!this.state.players.map(item => item.name).includes(playerObj.name)) {
+      if (!this.state.players.hasOwnProperty(playerObj.name)) {
           this.setState({
               ...this.state,
-              players: [...this.state.players, playerObj],
+              players: {...this.state.players, [playerObj.name]: playerObj},
           });
       }
       console.log(this.state.players);
@@ -54,6 +55,12 @@ class App extends React.Component {
 
   handleRemovePlayer(playerObj) {
     console.log("APP Has Received <del>" + playerObj);
+    let newPlayersDict = {...this.state.players};
+    delete newPlayersDict[playerObj.name];
+    this.setState({
+      ...this.state,
+      players: newPlayersDict
+    });
   }
 
   render() {
@@ -69,7 +76,7 @@ class App extends React.Component {
               {this.state.form_current === FormType.GETSUMMONERSFORM && 
                   <GetSummonersForm 
                       api_key={this.state.api_key}
-                      players={this.state.players}
+                      players={Object.values(this.state.players)}
                       onPlayerAdd={this.handleAddPlayer}
                       onPlayerRemove={this.handleRemovePlayer} />}
               {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}

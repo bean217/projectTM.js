@@ -25,9 +25,16 @@
 }
 
     .playerviewer .list ul {
+        list-style-type: none;
+        padding: 5px 0;
+        margin: 0 10px;
         width: 100%;
         height: 100%;
     }
+
+        .playerviewer .list ul li {
+            width: 100%;
+        }
 
 .playerviewer img {
     grid-area: img;

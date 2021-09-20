@@ -22,9 +22,9 @@
         "tournamenttypeselect";
 }
 
-.getsummonersform > * {
+/* .getsummonersform > * {
     border: 1px solid black;
-}
+} */
 
 .getsummonersform .uploadfile {
     grid-area: uploadfile;
