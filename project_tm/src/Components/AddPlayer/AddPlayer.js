@@ -37,6 +37,7 @@ export class AddPlayer extends React.Component {
             ...this.state,
             summonerName: "",
             isLoading: true,
+            errMsg: "",
         });
 
         fetch(`${BACKENDURL}/getsummoner`, {
@@ -52,6 +53,20 @@ export class AddPlayer extends React.Component {
         .then(res => res.json())
         .then(res => {
             console.log(res);
+            if (!res.result.hasOwnProperty('errMsg')) {
+                this.props.onPlayerAdd(res.result);
+            } else {
+                this.setState({
+                    ...this.state,
+                    errMsg: res.result.errMsg,
+                });
+            }
+
+            this.setState({
+                ...this.state,
+                summonerName: "",
+                isLoading: false,
+            });
         })
         .catch(err => console.log(`Encountered an error in AddPlayer::handleSubmit() - ${err}`));
 
@@ -60,12 +75,6 @@ export class AddPlayer extends React.Component {
         console.log("name: " + summoner.name);
         console.log("role1: " + summoner.role1);
         console.log("role2: " + summoner.role2);
-
-        this.setState({
-            ...this.state,
-            summonerName: "",
-            isLoading: false,
-        });
     }
 
     render() {

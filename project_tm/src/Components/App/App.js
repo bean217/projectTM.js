@@ -19,13 +19,16 @@ const FormType = {
 }
 
 class App extends React.Component {
-  
+
   constructor() {
     super();
     this.handleKey = this.handleKey.bind(this);
+    this.handleAddPlayer = this.handleAddPlayer.bind(this);
+    this.handleRemovePlayer = this.handleRemovePlayer.bind(this);
     this.state = {
       api_key: "",
       form_current: FormType.RIOTDEVKEYFORM,
+      players: [],
     };
   }
 
@@ -38,25 +41,45 @@ class App extends React.Component {
      });
   }
 
+  handleAddPlayer(playerObj) {
+      console.log("APP Has Received <add>" + playerObj);
+      if (!this.state.players.map(item => item.name).includes(playerObj.name)) {
+          this.setState({
+              ...this.state,
+              players: [...this.state.players, playerObj],
+          });
+      }
+      console.log(this.state.players);
+  }
+
+  handleRemovePlayer(playerObj) {
+    console.log("APP Has Received <del>" + playerObj);
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-        </header>
+      return (
+          <div className="App">
+              <header className="App-header">
+              </header>
 
         
-        {this.state.form_current === FormType.RIOTDEVKEYFORM && 
-          <RiotDevKeyForm onKeyAccept={this.handleKey} />}
-        {this.state.form_current === FormType.GETSUMMONERSFORM && 
-          <GetSummonersForm api_key={this.state.api_key} />}
-        {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
+              {this.state.form_current === FormType.RIOTDEVKEYFORM && 
+                  <RiotDevKeyForm 
+                      onKeyAccept={this.handleKey} />}
+              {this.state.form_current === FormType.GETSUMMONERSFORM && 
+                  <GetSummonersForm 
+                      api_key={this.state.api_key}
+                      players={this.state.players}
+                      onPlayerAdd={this.handleAddPlayer}
+                      onPlayerRemove={this.handleRemovePlayer} />}
+              {this.state.form_current === FormType.VIEWTEAMSFORM && <ViewTeamsForm />}
   
-        <BackgroundSlider 
-          images={[image1, image2, image3, image4, image5, image6]}
-          duration={8}
-          transition={2}
-        />
-      </div>
+              <BackgroundSlider 
+                  images={[image1, image2, image3, image4, image5, image6]}
+                  duration={8}
+                  transition={2} />
+
+          </div>
     );
   }
 }
