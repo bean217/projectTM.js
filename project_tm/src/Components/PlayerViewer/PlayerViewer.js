@@ -55,7 +55,7 @@ export class PlayerViewer extends React.Component {
     render() {
         return (
             <div className="playerviewer">
-                <div className="text">Summoners</div>
+                <div className="text">Summoners - {this.props.players.length}</div>
                 <div className="list">
                     <ul>
                         {this.props.players.map((player) => (
