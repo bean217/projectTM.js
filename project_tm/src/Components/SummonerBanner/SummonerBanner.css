@@ -1,0 +1,8 @@
+.summonerbanner {
+    justify-content: center;
+    align-items: center;
+}
+
+.summonerbanner img {
+    border-radius: 50%;
+}

@@ -4,6 +4,7 @@
     align-items: center;
     position: relative;
     border: 1px solid black;
+    cursor: default;
 }
 
 .playertag .name {

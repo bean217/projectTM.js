@@ -25,7 +25,7 @@ export class PlayerTag extends React.Component {
                 <div 
                     className="name" 
                     onClick={this.handleSelected}
-                    style={{backgroundColor: this.props.isSelected ? "lightsteelblue" : ""}}>
+                    style={{backgroundColor: this.props.isSelected ? "lightblue" : ""}}>
                         {this.props.player.name}
                 </div>
                 <div 
