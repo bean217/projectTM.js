@@ -49,7 +49,7 @@ class App extends React.Component {
       if (!this.state.players.hasOwnProperty(playerObj.name)) {
           this.setState({
               ...this.state,
-              players: {...this.state.players, [playerObj.name]: playerObj},
+              players: {[playerObj.name]: playerObj, ...this.state.players, },
           });
       }
       console.log(this.state.players);

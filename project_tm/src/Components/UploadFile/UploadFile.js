@@ -9,7 +9,7 @@ export class UploadFile extends React.Component {
                 <div className="text">Upload File:</div>
                 <ErrorMsg 
                     display={true} 
-                    errMsg={"TEST"}
+                    errMsg={"FILES CANNOT BE UPLOADED CURRENTLY"}
                 />
                 <div className="browse">
                     <input id="input" type="file" name="file"></input>
