@@ -12,6 +12,7 @@ export class PlayerTag extends React.Component {
     }
 
     handleRemove() {
+        if (this.props.isSelected) this.props.onTagToggle();
         this.props.onPlayerRemove(this.props.player);
     }
 
