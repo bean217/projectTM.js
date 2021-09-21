@@ -30,10 +30,12 @@ class App extends React.Component {
       form_current: FormType.RIOTDEVKEYFORM,
       players: {},
     };
+    
   }
 
   handleKey(api_key) {
     console.log(`API_KEY_PASSED_TO_PARENT: ${api_key}`);
+
     this.setState({
       ...this.state,
       api_key: api_key,

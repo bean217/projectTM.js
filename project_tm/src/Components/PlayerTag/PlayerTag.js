@@ -13,13 +13,13 @@ export class PlayerTag extends React.Component {
 
     render() {
         return (
-            <div className="playertag">
-                <div className="name">
+            <div className="playertag" >
+                <div className="name" onClick={() => console.log("CLICKED!")}>
                     {this.props.player.name}
                 </div>
-                <button onClick={this.handleRemove}>
+                <div className="button" onClick={this.handleRemove}>
                     X
-                </button>
+                </div>
             </div>
         );
     }
