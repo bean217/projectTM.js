@@ -1,8 +1,27 @@
 .summonerbanner {
-    justify-content: center;
-    align-items: center;
+    background-color: #006;
+    color: white;
+    text-align: center;
+    border: 1px solid black;
+    width: 100%;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "img"
+        "pd"
+        "rd";
 }
 
 .summonerbanner img {
+    grid-area: img;
     border-radius: 50%;
+}
+
+.summonerbanner .playerdata {
+    grid-area: pd;
+}
+
+.summonerbanner .roledata {
+    grid-area: rd;
 }
