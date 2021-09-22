@@ -20,8 +20,6 @@ async function check_api(api_key) {
 }
 
 async function get_summoner(api_key, summonerName) {
-    
-    
     let summonerInfo = {
         name: summonerName,
     };
