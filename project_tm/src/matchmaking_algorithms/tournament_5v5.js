@@ -8,7 +8,7 @@
  */
 function create_tournament_5v5(player_list) {
     // (1) Sort players by max MMR
-    sorted_players = player_list.sort((a, b) => {
+    const sorted_players = player_list.sort((a, b) => {
         // if a.MMR < b.MMR ==> [b, a], return > 0
         if (a.MMR < b.MMR) return 1;
         // if a.MMR > b.MMR ==> [a, b], return < 0
@@ -17,7 +17,7 @@ function create_tournament_5v5(player_list) {
         else return 0;
     });
     // (2) Get the number of teams
-    num_teams = Math.floor(player_list / 5);
+    const num_teams = Math.floor(player_list / 5);
     
 }
 
@@ -33,4 +33,9 @@ function zigzag_assign_tournament_5v5(player_list, teams_dict, team_fills_dict, 
 function validate_tournament_5v5(player_list) {
     // must contain at least 10 unique players at multiples of 5 increments
     return player_list.length >= 10 && player_list.length % 5 === 0;
+}
+
+module.exports = {
+    validate: validate_tournament_5v5,
+    generate: create_tournament_5v5,
 }

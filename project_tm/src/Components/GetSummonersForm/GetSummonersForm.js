@@ -20,7 +20,7 @@ export class GetSummonersForm extends React.Component {
                 players={this.props.players}
                 onPlayerRemove={this.props.onPlayerRemove} />
             <hr id="hr3" />
-            <TournamentTypeSelect />
+            <TournamentTypeSelect players={this.props.players} />
         </div>);
     }
 }
