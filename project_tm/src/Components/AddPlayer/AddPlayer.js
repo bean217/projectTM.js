@@ -1,9 +1,7 @@
 import React from "react";
-import { BACKENDURL } from "../App/constants";
+import { BACKENDURL, ROLES } from "../App/constants";
 import { ErrorMsg } from "../ErrorMsg/ErrorMsg";
-import './AddPlayer.css'
-
-const options = ["FILL", "TOP", "JUNGLE", "MID", "ADC", "SUPPORT"];
+import './AddPlayer.css';
 
 export class AddPlayer extends React.Component {
     constructor() {
@@ -70,12 +68,6 @@ export class AddPlayer extends React.Component {
             });
         })
         .catch(err => console.log(`Encountered an error in AddPlayer::handleSubmit() - ${err}`));
-
-        console.log("SN: " + this.state.summonerName);
-        
-        console.log("name: " + summoner.name);
-        console.log("role1: " + summoner.role1);
-        console.log("role2: " + summoner.role2);
     }
 
     render() {
@@ -100,12 +92,12 @@ export class AddPlayer extends React.Component {
 
 
                 <select name="role1" id="role1" >
-                    {options.map((option) => (
+                    {ROLES.map((option) => (
                         <option key={option} value={option}>{option}</option>
                     ))}
                 </select>
                 <select name="role2" id="role2" >
-                    {options.map((option) => (
+                    {ROLES.map((option) => (
                         <option key={option} value={option}>{option}</option>
                     ))}
                 </select>

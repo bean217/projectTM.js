@@ -10,7 +10,9 @@ export class GetSummonersForm extends React.Component {
 
     render() {
         return (<div className="getsummonersform">
-            <UploadFile />
+            <UploadFile 
+                api_key={this.props.api_key}
+                onPlayerAdd={this.props.onPlayerAdd} />
             <hr id="hr1" />
             <AddPlayer 
                 api_key={this.props.api_key} 
