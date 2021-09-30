@@ -26,7 +26,10 @@ async function get_summoner(api_key, summonerName) {
 
     let errMsg = { 
         errMsg: "",
-     };
+    };
+
+    let gotRankData = true;
+    let gotMMRData = true;
 
     await axios.get(
         `${RiotApiURL}/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${api_key}`
@@ -43,11 +46,13 @@ async function get_summoner(api_key, summonerName) {
                 .then(res => {
                     // console.log(res.data);
                     summonerInfo.rank = get_max_rank(res.data);
+                    if (summonerInfo.rank == null) gotRankData = false;
                 })
                 .catch(
                     err => {
                         // console.log(`Encountered an error in server/riotApi.js::get_summoner()`);
-                        errMsg.errMsg = `Could not fetch ranked data`;
+                        gotRankData = false;
+                        // errMsg.errMsg = `Could not fetch ranked data`;
                     }
                 );
 
@@ -63,7 +68,8 @@ async function get_summoner(api_key, summonerName) {
                 .catch(
                     err => {
                         // console.log(`Encountered an error in server/riotApi.js::get_summoner()`);
-                        errMsg.errMsg = `Insufficient MMR Data for ${summonerName}`;
+                        gotMMRData = false;
+                        //errMsg.errMsg = `Insufficient MMR Data for ${summonerName}`;
                     }
                 );
         })
@@ -72,6 +78,13 @@ async function get_summoner(api_key, summonerName) {
             // console.log(`Encountered an error in server/riotApi.js::get_summoner() - ${err}`);
             errMsg.errMsg = `'${summonerName}' not found`;
         });
+
+        // if summoner has no rank or MMR data, report error
+        console.log("MMR:"+gotMMRData + " RANK:"+gotRankData);
+        console.log("TEST");
+        if (!gotRankData && !gotMMRData) {
+            errMsg.errMsg = `Insufficient matchmaking data for ${summonerName}`;
+        }
 
         console.log(errMsg.errMsg.length === 0 ? summonerInfo : errMsg);
         return errMsg.errMsg.length === 0 ? summonerInfo : errMsg;
