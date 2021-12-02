@@ -69,7 +69,12 @@ async function get_summoner(api_key, summonerName) {
                     err => {
                         // console.log(`Encountered an error in server/riotApi.js::get_summoner()`);
                         gotMMRData = false;
-                        //errMsg.errMsg = `Insufficient MMR Data for ${summonerName}`;
+                        // errMsg.errMsg = `Insufficient MMR Data for ${summonerName}`;
+
+                        // if summoner has rank data, assign their MMR to the avg of their highest rank
+                        if (gotRankData) {
+                            // TODO: placeholder for now
+                        }
                     }
                 );
         })

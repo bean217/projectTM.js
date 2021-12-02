@@ -1,3 +1,60 @@
+const RANK_MMR_AVGS = {
+    'IRON': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'BRONZE': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'SILVER': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'GOLD': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'PLATINUM': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'DIAMOND': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'MASTER': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'GRANDMASTER': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+    'CHALLENGER': {
+        'IV': ,
+        'III': ,
+        'II': ,
+        'I': ,
+    },
+}
+
 const TIER = {
     'IRON': 1,
     'BRONZE': 2,
