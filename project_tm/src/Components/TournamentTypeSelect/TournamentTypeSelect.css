@@ -1,0 +1,28 @@
+.tournamenttypeselect {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "txt err"
+    "tt gen";
+}
+
+.tournamenttypeselect > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.tournamenttypeselect .errMsg {
+    grid-area: err;
+}
+
+.tournamenttypeselect .text {
+    grid-area: txt;
+}
+
+.tournamenttypeselect select {
+    grid-area: tt;
+}
+
+.tournamenttypeselect button {
+    grid-area: gen;
+}

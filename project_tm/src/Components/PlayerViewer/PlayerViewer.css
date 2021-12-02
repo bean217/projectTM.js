@@ -1,0 +1,50 @@
+.playerviewer {
+    display: grid;
+    max-height: 30vh;
+    grid-template-columns: 10fr 1fr 10fr;
+    column-gap: .25rem;
+    grid-template-areas:
+        "txt . ." 
+        "list img banner"
+        "list img banner";
+}
+
+.playerviewer > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.playerviewer .text {
+    grid-area: txt;
+}
+
+.playerviewer .list {
+    grid-area: list;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    width: 100%;
+    max-height: 100%;
+    padding: 4%;
+}
+
+    .playerviewer .list ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+        .playerviewer .list ul li {
+            width: 100%;
+        }
+
+
+.playerviewer img {
+    grid-area: img;
+    height: 100px;
+}
+
+.playerviewer .banner {
+    grid-area: banner;
+}

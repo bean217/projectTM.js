@@ -1,0 +1,36 @@
+.uploadfile {
+    display: grid;
+    grid-template-columns: 4fr 3fr 1fr;
+    grid-template-areas: 
+        "txt err ."
+        "browse submit usage";
+}
+
+.uploadfile > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.uploadfile .errMsg {
+    grid-area: err;
+}
+
+.uploadfile .text {
+    grid-area: txt;
+}
+
+.uploadfile .browse {
+    grid-area: browse;
+}
+
+    .uploadfile .browse input {
+        display: none;
+    }
+
+.uploadfile .submit {
+    grid-area: submit;
+}
+
+.uploadfile .usage {
+    grid-area: usage;
+}

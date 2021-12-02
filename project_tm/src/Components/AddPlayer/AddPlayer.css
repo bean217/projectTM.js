@@ -1,0 +1,36 @@
+.addplayer {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-areas: 
+    "txt txt txt txt txt txt txt txt err err err err err err err err . ."
+    "sn sn sn sn sn sn sn sn r1 r1 r1 r1 r2 r2 r2 r2 plus plus";
+}
+
+.addplayer > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.addplayer .errMsg {
+    grid-area: err;
+}
+
+.addplayer .text {
+    grid-area: txt;
+}
+
+.addplayer input[type=text] {
+    grid-area: sn;
+}
+
+.addplayer #role1 {
+    grid-area: r1;
+}
+
+.addplayer #role2 {
+    grid-area: r2;
+}
+
+.addplayer button {
+    grid-area: plus;
+}
